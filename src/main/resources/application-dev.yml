@@ -1,0 +1,21 @@
+spring:  
+  profiles: active
+  mvc:
+    view:
+      prefix: "/WEB-INF/views/"
+      suffix: ".jsp"
+  datasource:
+    username: "sem_pc"
+    password: "java"
+    url: "jdbc:oracle:thin:@localhost:1522:XE"
+    driver-class-name: "oracle.jdbc.driver.OracleDriver"  
+
+mybatis:
+  config-location: "classpath:/kr/or/ddit/config/db/mybatis-config.xml"
+  
+  
+
+server:
+  port: 80
+  
+

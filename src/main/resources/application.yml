@@ -1,0 +1,58 @@
+#기본 profile : prd
+spring:
+  profiles:
+    active: "prd"
+---
+
+#공통       
+spring:
+  mvc:
+    view:
+      prefix: "/WEB-INF/views/"
+      suffix: ".jsp"
+          
+---
+#profile : prd(운영)
+spring:
+  profiles: "prd"
+  datasource:
+      username: "sem_pc"
+      password: "java"
+      url: "jdbc:oracle:thin:@localhost:1521:XE"
+      driver-class-name: "oracle.jdbc.driver.OracleDriver"
+---
+#profile : dev(테스트)
+spring:
+  profiles: "dev"
+  datasource:
+      username: "sem_pc"
+      password: "java"
+      url: "jdbc:oracle:thin:@localhost:1522:XE"
+      driver-class-name: "oracle.jdbc.driver.OracleDriver"
+---
+
+ 
+         
+mybatis:
+  config-location: "classpath:/kr/or/ddit/config/db/mybatis-config.xml"
+  
+  
+
+spring:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+        
+---
+spring:
+  messages:
+    basename: "kr/or/ddit/config/msg/error,
+               kr/or/ddit/config/msg/msg"   
+
+server:
+  error :
+    whitelabel:
+      enabled: false
+  port: 80    
